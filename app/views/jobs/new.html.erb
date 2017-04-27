@@ -1,13 +1,16 @@
-<h1> Add a job </h1>
-
-<%= simple_form_for @job do |f| %>
-
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email %>
-<%= f.input :is_hidden %>
-
-  <%= f.submit "Submit" %>
-<% end %>
+<div class="col-md-8 col-centered">
+  <div class="panel panel-info">
+    <div class="panel-heading">发起活动</div>
+    <div class="panel-body">
+      <%= simple_form_for @job do |f| %>
+        <%= f.input :title, :label => "活动名称" %>
+        <%= f.input :description, :label => "活动地点" %>
+        <%= f.input :wage_lower_bound, :label => "进阶程度（1-3级）" %>
+        <%= f.input :wage_upper_bound, :label => "跑步里程" %>
+        <%= f.input :contact_email %>
+        <%= f.input :is_hidden %>
+        <%= f.submit "Submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>
