@@ -83,6 +83,7 @@ Rails.application.configure do
 
   config.serve_staitic_assets = true
   config.assets.compile = true</span>
+end
   #首页图片加载
 
   # Do not dump schema after migrations.
