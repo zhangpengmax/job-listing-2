@@ -1,100 +1,165 @@
-<div class="col-lg-8 col-centered">
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-        <h3>
-          附近的活动
-          <div class="pull-right">
-            <%= link_to("发起活动", new_job_path, :class => "btn btn-default" ) %>
+
+<!-- <div class="col-lg-8 col-centered"> -->
+
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+          /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+          .row.content {height: 1500px}
+
+          /* Set gray background color and 100% height */
+          .sidenav {
+            background-color: #f1f1f1;
+            height: 100%;
+          }
+
+          /* Set black background color, white text and some padding */
+          footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+          }
+
+          /* On small screens, set height to 'auto' for sidenav and grid */
+          @media screen and (max-width: 767px) {
+            .sidenav {
+              height: auto;
+              padding: 15px;
+            }
+            .row.content {height: auto;}
+          }
+        </style>
+      </head>
+
+      <body>
+          <div class="container-fluid">
+            <div class="row content">
+              <div class="col-sm-1">
+              </div>
+
+        <div class="col-sm-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3>
+                    附近的活动
+                      <div class="pull-right">
+                        <%= link_to("发起活动", new_job_path, :class => "btn btn-default" ) %>
+                      </div>
+                        <div class="dropdown clearfix pull-right">
+                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            筛选
+                              <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+                              <li>
+                                <%= link_to("进阶程度", jobs_path(:order => "by_lower_bound")) %>
+                              </li>
+                              <li>
+                                  <%= link_to("跑步里程", jobs_path(:order => "by_upper_bound")) %>
+
+                              </li>
+                              <li>
+                                <%= link_to("最近活动日期", jobs_path ) %>
+                              </li>
+                              </ul>
+                          </div>
+                    </h3>
+                  </div>
+              </div>
+
+
+
+
+            <div class="col-sm-12">
+              <table class="table table-boldered">
+                  <thead>
+                      <tr>
+                          <td>活动名称</td>
+                          <td>进阶程度</td>
+                          <td>跑步里程（公里）</td>
+                          <td>活动日期</td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <% @jobs.each do |job| %>
+                      <tr>
+                          <td>
+                              <%= link_to(job.title, job_path(job)) %>
+                          </td>
+                          <td>
+                              <%= job.wage_lower_bound %>
+                          </td>
+                          <td>
+                              <%= job.wage_upper_bound %>
+                          </td>
+                          <td>
+                              <%= job.created_at %>
+                          </td>
+                      </tr>
+                      <% end %>
+                  </tbody>
+                </table>
+            </div>
+            </div>
+
+
+
+      <div class="col-sm-2 sidenav">
+              <br>
+              <h3>热门活动</h3>
+              <br>
+              <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#section1">
+                  <div class="thumbnail">
+                    <img src="http://www.iheartrunning.com.au/wp-content/uploads/2016/04/Stair-running.jpg" alt="Lights" style="width:100%">
+                    <div class="caption">
+                      <h4 class="text-center">Longfellows城市慢跑</h4>
+                      <h5 class="text-center"><span class="glyphicon glyphicon-time"></span> Apr.30,2017 SUN.</h5>
+              		  <h5 class="text-center"><span class="label label-danger">K2进阶</span>
+                    </div>
+                  </a>
+                </div>
+
+
+
+                <li class="active"><a href="#section2">
+                  <div class="thumbnail">
+                    <img src="http://2.slimshortcut.com/wp-content/uploads/2014/03/woman-jogging-660x400.jpg" alt="Lights" style="width:100%">
+                    <div class="caption">
+                      <h4 class="text-center">户外马甲线入门训练</h4>
+                      <h5 class="text-center"><span class="glyphicon glyphicon-time"></span> May.1,2017 MON.</h5>
+              		  <h5 class="text-center"><span class="label label-primary">K1入门</span></h5><br>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+                <li class="active"><a href="#section3">
+                    <div class="thumbnail">
+                      <img src="http://smartmama.com/wp-content/uploads/2016/09/iStock_73983491_SMALL-660x400.jpg" alt="Lights" style="width:100%">
+                      <div class="caption">
+                        <h4 class="text-center">AssemblyRow环湖慢跑</h4>
+                        <h5 class="text-center"><span class="glyphicon glyphicon-time"></span> May.7,2017 SUN.</h5>
+                		  <h5 class="text-center"><span class="label label-primary">K1入门</span></h5><br>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              </ul>
           </div>
-          <div class="dropdown clearfix pull-right">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            筛选
-              <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-              <li>
-                <%= link_to("进阶程度", jobs_path(:order => "by_lower_bound")) %>
-              </li>
-              <li>
-                  <%= link_to("跑步里程", jobs_path(:order => "by_upper_bound")) %>
 
-              </li>
-              <li>
-                <%= link_to("最近活动日期", jobs_path ) %>
-          </h3>
-              </li>
-          </ul>
+        </div>
       </div>
 
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <!-- <a href="header1.jpg" target="_blank"> -->
-                <img src="https://ooo.0o0.ooo/2017/04/28/59029511d03d4.jpg" alt="Lights" style="width:90%">
-                <div class="caption">
-                  <h3 class="text-center">Perfect Weekend Morning</h2>
-                  <p class="text-center">Weekend 2 miles easy and fun running + brunch</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <!-- <a href="/w3images/nature.jpg" target="_blank"> -->
-                <img src="https://static.pexels.com/photos/5317/food-salad-restaurant-person.jpg" alt="Nature" style="width:90%">
-                <div class="caption">
-                  <h3 class="text-center">Girl Networking</h2>
-                  <p class="text-center">Brunch and networking session with inspiring and women leaders across industries </p>
-                 </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <!-- <a href="/w3images/fjords.jpg" target="_blank"> -->
-                <img src="https://mindbodygreen-res.cloudinary.com/image/upload/c_limit,w_738,f_auto/ftr/NoraTobinPlank.jpg" alt="Fjords" style="width:90%">
-                <div class="caption">
-                  <h3 class="text-center">Professional Coach</h2>
-                  <p class="text-center">Special outdoor training session with professional fitness coach </p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        </div>
-
-
-        <table class="table table-boldered">
-            <thead>
-                <tr>
-                    <td>活动名称</td>
-                    <td>进阶程度</td>
-                    <td>跑步里程（公里）</td>
-                    <td>活动日期</td>
-                </tr>
-            </thead>
-            <tbody>
-                <% @jobs.each do |job| %>
-                <tr>
-                    <td>
-                        <%= link_to(job.title, job_path(job)) %>
-                    </td>
-                    <td>
-                        <%= job.wage_lower_bound %>
-                    </td>
-                    <td>
-                        <%= job.wage_upper_bound %>
-                    </td>
-                    <td>
-                        <%= job.created_at %>
-                    </td>
-                </tr>
-                <% end %>
-            </tbody>
-          </table>
+      <div class="col-sm-1">
       </div>
-    </div>
-  </div>
-</div>
+
+      </body>
