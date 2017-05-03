@@ -18,6 +18,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Six+Caps');
+@import url('https://fonts.googleapis.com/css?family=Medula+One');
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 /****** LOGIN MODAL ******/
@@ -72,7 +75,8 @@
 .loginmodal {
   text-align: center;
   font-size: 14px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Six Caps', sans-serif;
+  // font-family: 'Arial', sans-serif;
   font-weight: 700;
   height: 36px;
   padding: 0 8px;
@@ -108,7 +112,7 @@
   text-align: center;
   display: inline-block;
   opacity: 0.6;
-  transition: opacity ease 0.5s;
+  transition: opacity ease 0.5s;//透明度
 }
 
 .login-help{
@@ -124,6 +128,8 @@
 
 
 .navbar-default .navbar-brand {
+    font-family: 'Medula One', cursive;
+    font-size: 26px;
     color: #ff7380;
     padding: 10px 15px;
     line-height: 30px;
@@ -164,6 +170,7 @@
 
     .jumbotron1 {
       background-image:url("http://hipandhealthy.com/wp-content/uploads/2013/04/running-at-night.jpg");
+      // ("header.jpg")
       background-repeat: no-repeat;
       background-size: cover;
       margin-top: -50px;
@@ -180,6 +187,15 @@
       padding-bottom: 30px;
     }
 
+    .jumbotron3 {
+      background-image:url("https://static.pexels.com/photos/177566/pexels-photo-177566.jpeg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: #e6e6e6;
+      margin-top: -50px;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
 
     .box-inner {
         background-color: rgba(250, 250, 250, 0.69);
@@ -190,25 +206,29 @@
 
     .title {
         color: #ffffff;
-        font-size: 40px;
-        text-align: center;
-        margin-top: 200px;
+        font-family: 'Anton', sans-serif;
+        font-size: 100px;
+        text-align: left;
+        margin-top: 230px;
         margin-bottom: 80px;
+        padding: 0px 50px 0;
     }
 
     .slogan {
         color: #ffffff;
+        font-family: Calibre thin;
         margin-top: 10px;
         margin-bottom: 50px;
-        text-align: center;
+        text-align: left;
         font-size: 25px;
-        top: 12px;
+        padding: 0px 50px 0;
     }
 
     .lead {
         margin-bottom: 60px;
-        text-align: center;
+        text-align: left;
         color: white;
+        padding: 0px 50px 0;
     }
 
 

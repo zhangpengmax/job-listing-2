@@ -1,10 +1,55 @@
-<h3> Apply to <%= @job.title %> </h3>
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+</style>
 
-<hr>
-
+<!--
 <%= simple_form_for [@job, @resume] do |f| %>
   <%= f.input :content %>
   <%= f.input :attachment %>
 
-  <%= f.submit "Submit" %>
+  <%= f.submit "Join" %> -->
 <% end %>
+
+<div class="jumbotron3">
+   <br>
+    <h1 class="title">Join the Squad</h1>
+    </div>
+
+<div class="w3-center w3-padding-54" id="contact">
+  <!-- 可能要改成join -->
+  <span class="w3-large w3-bottombar w3-border-dark-grey w3-padding-16"><h3> Join <%= @job.title %> </h3></span>
+</div>
+
+<form class="w3-container" action="/action_page.php" target="_blank">
+  <div class="w3-section">
+    <label>Name</label>
+    <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
+  </div>
+  <div class="w3-section">
+    <label>Email</label>
+    <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
+  </div>
+  <div class="w3-section">
+    <label>Subject</label>
+    <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
+  </div>
+  <div class="w3-section">
+    <label>Message</label>
+    <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
+  </div>
+  <button type="submit" class="w3-button w3-black ">Join</button>
+</form>
+
+</div>
+<hr>
