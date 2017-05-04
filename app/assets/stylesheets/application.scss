@@ -238,6 +238,15 @@
         padding: 0px 50px 0;
     }
 
+    .testimony {
+        color: #757575;
+        font-family: Calibre thin;
+        margin-top: 18px;
+        margin-bottom: 50px;
+        text-align: left;
+        font-size: 25px;
+        padding: 0px 50px 0;
+    }
 
 //---------Content---------
 
@@ -265,6 +274,13 @@
 .lead {
     font-size: 18px;
     font-weight: 400;
+}
+
+.photo-gallery {
+    margin-right: 5px; //图片和链接文字拉开一点距离
+    color: #ef5350
+
+
 }
 
 //---------Footer---------
