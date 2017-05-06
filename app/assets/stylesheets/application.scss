@@ -214,12 +214,22 @@
         padding: 0px 50px 0;
     }
 
-    .slogan {
+    .slogan1 {
         color: #ffffff;
         font-family: Calibre thin;
         margin-top: 10px;
         margin-bottom: 50px;
         text-align: left;
+        font-size: 25px;
+        padding: 0px 50px 0;
+    }
+
+    .slogan2 {
+        color: #ffffff;
+        font-family: Calibre thin;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        text-align: center;
         font-size: 25px;
         padding: 0px 50px 0;
     }
@@ -280,7 +290,16 @@
     margin-right: 5px; //图片和链接文字拉开一点距离
     color: #ef5350
 
+}
 
+.jumbotron4 {
+  background-image:url("http://i.imgur.com/VwWT4s2.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 100px;
 }
 
 //---------Footer---------
